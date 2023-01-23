@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://shopkgp.netlify.app/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          ShopKGP
-        </a>
-      </header>
-    </div>
+    <Comment userName="Aashish" time={new Date().toString()}>
+      <h2>Heading of the child text</h2>
+      <p>This is para two</p> 
+    </Comment>
   );
 }
 
-export default App;
+function Comment({userName, time, children}) {
+  return (
+    <>
+      <p>{userName} commented at {time}</p>
+      {children}
+    </>
+  )
+}
